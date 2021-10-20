@@ -1,0 +1,22 @@
+name: Build
+on: push
+
+jobs:
+  build_on_win:
+    runs-on: windows-latest
+    if: "!contains(github.event.head_commit.message, 'skip-publish')"
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          cache: "yarn"
+      - name: install dependencies
+        run: yarn install
+      - name: build react
+        run: $env:CI=$false; yarn run build;
+      - name: publish app
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn run electron-ship

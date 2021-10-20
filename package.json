@@ -1,21 +1,38 @@
 {
-  "name": "fahmily",
-  "version": "0.1.0",
+  "name": "family",
+  "version": "0.0.1",
   "private": true,
+  "repository": "https://github.com/Electro-Magnet45/fahmily-frontend.git",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@styled-icons/bootstrap": "^10.34.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "electron-is-dev": "^2.0.0",
+    "emoji-picker-react": "^3.4.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-router-dom": "^5.3.0",
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.1.2"
   },
+  "main": "public/main.js",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "devstart": "electron .",
+    "electron-ship": "electron-builder -c.extraMetadata.main=build/main.js build --win --publish always"
+  },
+  "build": {
+    "productName": "Fahmily",
+    "directories": {
+      "buildResources": "public"
+    },
+    "win": {
+      "icon": "public/favicon.ico"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +51,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^15.1.2",
+    "electron-builder": "^22.13.1",
+    "react-scripts": "^4.0.3"
   }
 }

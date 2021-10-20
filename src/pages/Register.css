@@ -1,0 +1,122 @@
+.register_container,
+.register-cont_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.register_container {
+  min-height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+.register-cont_div {
+  display: flex;
+  margin-top: 3rem;
+}
+#register_form2 {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.register-cont_form {
+  margin-right: 3rem;
+}
+.hidden_message {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.visible_message {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+
+.register-form_div {
+  position: relative;
+  margin: 1rem 0;
+}
+.register-form_div.clickable {
+  cursor: pointer;
+}
+.register-form_div img {
+  opacity: 0;
+  height: 3rem;
+  position: absolute;
+  top: -50%;
+  z-index: 2;
+}
+.register-form_div:hover img {
+  animation: form_input_anime 10s ease 3s infinite;
+}
+
+.register-form_div input {
+  background-color: #222222;
+}
+.register-form_div input,
+.register-form_div button {
+  border: 1px solid transparent;
+  padding: 1.2rem 1rem;
+  width: 30vw;
+  font-family: "Sora", sans-serif;
+  font-size: 1rem;
+  border-radius: 12px;
+  color: white;
+}
+.register-form_div button:hover {
+  border: 1px solid white;
+}
+
+.hide_anime {
+  animation: form_hide_anime 2s forwards;
+}
+.show_anime {
+  position: relative !important;
+  animation: form_show_anime 2s forwards;
+}
+
+/**/
+@keyframes form_input_anime {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  1% {
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(32vw) translateY(0);
+  }
+  50% {
+    transform: translateY(4.5rem) translateX(32vw) rotate(90deg);
+  }
+  75% {
+    transform: translateX(-1.5rem) translateY(4.5rem) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(270deg);
+    opacity: 1;
+  }
+}
+@keyframes form_hide_anime {
+  0% {
+    transform: translateX(0);
+    position: absolute;
+  }
+  100% {
+    transform: translateX(-100vw);
+    position: absolute;
+  }
+}
+@keyframes form_show_anime {
+  0% {
+    transform: translateX(60vw);
+    opacity: 0;
+    z-index: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    position: relative;
+    z-index: 0;
+  }
+}
