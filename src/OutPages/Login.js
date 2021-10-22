@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Login.css";
 import {
   Envelope,
@@ -9,9 +9,7 @@ import {
 } from "@styled-icons/bootstrap";
 import { Link } from "react-router-dom";
 
-const Login = ({ pTitle }) => {
-  useEffect(() => (document.title = pTitle), [pTitle]);
-
+const Login = () => {
   return (
     <div className="login">
       <div className="login_container app_container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import app_icon from "../assets/logo.png";
 import {
@@ -15,9 +15,15 @@ import {
   Calendar2CheckFill,
   ChatFill,
 } from "@styled-icons/bootstrap";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
-  const [pathName, setPathName] = useState("");
+  const location = useLocation();
+  const [pathName, setPathName] = useState("/activity/tasks");
+
+  useEffect(() => {
+    setPathName(location.pathname);
+  }, [location]);
 
   return (
     <div className="navBar">
@@ -29,32 +35,36 @@ const NavBar = () => {
           <div className="navBar-cont_link navBar-cont_search">
             <Search />
           </div>
+          <Link to="/home">
+            <div className="navBar-cont_link">
+              {pathName === "/home" ? <GridFill /> : <GridOutline />}
+            </div>
+          </Link>
           <div className="navBar-cont_link">
-            {pathName === "/home" ? <GridFill /> : <GridOutline />}
-          </div>
-          <div className="navBar-cont_link">
-            {pathName === "/announcements" ? (
+            {pathName === "/activity/announcements" ? (
               <MegaphoneFill />
             ) : (
               <MegaphoneOutline />
             )}
           </div>
           <div className="navBar-cont_link">
-            {pathName === "/new-suggestion" ? (
+            {pathName === "/activity/new-suggestion" ? (
               <LightbulbFill />
             ) : (
               <LightBulbOuline />
             )}
           </div>
+          <Link to="/activity/tasks">
+            <div className="navBar-cont_link">
+              {pathName === "/activity/tasks" ? (
+                <Calendar2CheckFill />
+              ) : (
+                <CalendarOutline />
+              )}
+            </div>
+          </Link>
           <div className="navBar-cont_link">
-            {pathName === "/events" ? (
-              <Calendar2CheckFill />
-            ) : (
-              <CalendarOutline />
-            )}
-          </div>
-          <div className="navBar-cont_link">
-            {pathName === "/chat" ? <ChatFill /> : <ChatOutline />}
+            {pathName === "/activity/chat" ? <ChatFill /> : <ChatOutline />}
           </div>
         </div>
         <div className="navBar-cont_profile">

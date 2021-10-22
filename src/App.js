@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import LoggedInStack from "./LoggedInStack";
-import LoggedOutStack from "./LoggedOutStack";
+import { HashRouter } from "react-router-dom";
+import RouteHandler from "./RouteHandler";
 
 function App() {
-  const [isLoggedin, setIsLoggedin] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="app">
       <HashRouter>
-        <Switch>
-          <Route exact path="/">
-            {isLoggedin ? <Redirect to="/home" /> : <Redirect to="/login" />}
-          </Route>
-        </Switch>
-        {isLoggedin ? <LoggedInStack /> : <LoggedOutStack />}
+        <RouteHandler isLoggedIn={isLoggedIn} />
       </HashRouter>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import register_photo from "../assets/register_photo.png";
 import {
@@ -81,11 +81,7 @@ const RegisterForm2 = () => {
   );
 };
 
-const Register = ({ pTitle }) => {
-  useEffect(() => {
-    document.title = pTitle;
-  }, [pTitle]);
-
+const Register = () => {
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
 
