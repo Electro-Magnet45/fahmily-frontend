@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("path");
 const isDev = require("electron-is-dev");
 
@@ -6,6 +6,7 @@ const createWindow = () => {
   const mainWin = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
     icon: __dirname + "./favicon.ico",
     webPreferences: {
       nodeIntegration: true,
@@ -18,6 +19,17 @@ const createWindow = () => {
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
+
+  ipcMain.on("minimizeApp", () => {
+    mainWin.minimize();
+  });
+  ipcMain.on("maximizeRestoreApp", () => {
+    if (mainWin.isMaximized()) return mainWin.restore();
+    mainWin.maximize();
+  });
+  ipcMain.on("closeApp", () => {
+    mainWin.close();
+  });
 };
 
 app.on("ready", createWindow);

@@ -1,6 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import Menu from "./components/Menu";
 import Tasks from "./InPages/Tasks";
 
 const ActivityStack = () => {
@@ -16,12 +17,15 @@ const ActivityStack = () => {
 const LoggedInStack = () => {
   return (
     <div className="app_container">
+      <Menu />
       <NavBar />
-      <Switch>
-        <Route path="/activity">
-          <ActivityStack />
-        </Route>
-      </Switch>
+      <div className="app-cont_routes">
+        <Switch>
+          <Route path="/activity">
+            <ActivityStack />
+          </Route>
+        </Switch>
+      </div>
     </div>
   );
 };

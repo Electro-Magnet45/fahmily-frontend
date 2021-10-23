@@ -18,11 +18,24 @@
 .app input::placeholder {
   color: white;
 }
+.base {
+  background-color: #151419;
+  color: white;
+}
 .app_container {
   min-height: 100vh;
   min-width: 100%;
-  display: flex;
   animation: page_transition 1.5s forwards;
+  display: grid;
+  grid-template-areas:
+    "navBar menu menu"
+    "navBar routes routes"
+    "navBar routes routes";
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+.app-cont_routes {
+  grid-area: routes;
 }
 
 .login_container span,

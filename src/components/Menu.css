@@ -1,0 +1,44 @@
+.menu {
+  grid-area: menu;
+  height: fit-content;
+  width: fit-content;
+}
+.menu_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 95vw;
+  margin-top: 0.6rem;
+}
+.menu-cont_item {
+  position: relative;
+  margin: 0 0.5rem;
+  background-color: #494d62;
+  border-radius: 30%;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+}
+.menu-cont_item.profile {
+  padding: 0;
+  background-color: transparent;
+  margin: 0 1.5rem;
+}
+.menu-cont_item svg {
+  height: 1.2rem;
+}
+.menu-cont_item img {
+  width: 2.5rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.menu-item_bell {
+  position: absolute;
+  top: 0;
+  left: 75%;
+  background: var(--back-colour);
+  height: 0.6rem;
+  width: 0.6rem;
+  border-radius: 50%;
+}

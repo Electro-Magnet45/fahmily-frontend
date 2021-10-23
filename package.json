@@ -1,6 +1,6 @@
 {
   "name": "family",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "repository": "https://github.com/Electro-Magnet45/fahmily-frontend.git",
   "dependencies": {
