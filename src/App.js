@@ -5,7 +5,7 @@ import FrameBar from "./components/FrameBar";
 import RouteHandler from "./RouteHandler";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="base">
