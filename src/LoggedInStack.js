@@ -20,11 +20,13 @@ const LoggedInStack = () => {
       <Menu />
       <NavBar />
       <div className="app-cont_routes">
-        <Switch>
-          <Route path="/activity">
-            <ActivityStack />
-          </Route>
-        </Switch>
+        <div className="app-cont_test">
+          <Switch>
+            <Route path="/activity">
+              <ActivityStack />
+            </Route>
+          </Switch>
+        </div>
       </div>
     </div>
   );

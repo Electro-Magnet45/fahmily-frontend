@@ -1,5 +1,6 @@
 import React from "react";
 import "./Menu.css";
+import man_1 from "../assets/man_1.png";
 import { Bell, QuestionCircle, Gear } from "@styled-icons/bootstrap";
 
 const Menu = () => {
@@ -17,10 +18,7 @@ const Menu = () => {
           <Gear />
         </div>
         <div className="menu-cont_item profile">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJ774VL7RjYJGKgiFM2E1DmvLT3NeldlBWA&usqp=CAU"
-            alt=""
-          />
+          <img src={man_1} alt="" />
         </div>
       </div>
     </div>

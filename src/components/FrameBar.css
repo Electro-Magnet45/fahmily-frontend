@@ -5,7 +5,10 @@
   user-select: none;
   z-index: 99;
   margin-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
 }
+
 .frameBar_container,
 .frameBar-cont_btns,
 .frameBar-cont-btn_div {
@@ -13,7 +16,7 @@
 }
 
 .frameBar-cont_btns {
-  padding-left: 1rem;
+  padding: 0.2rem 0.1rem 0 1rem;
   -webkit-app-region: no-drag;
   margin-left: auto;
 }

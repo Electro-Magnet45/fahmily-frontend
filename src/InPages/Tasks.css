@@ -1,0 +1,102 @@
+.tasks-cont_body {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+  font-family: "Sora", sans-serif;
+}
+.tasks-body_child {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  flex-direction: column;
+  background-color: #272938;
+  border-image-slice: 1; /*for border*/
+  height: fit-content;
+}
+.tasks-cont_body div:nth-child(1) {
+  border-image-source: linear-gradient(to left, #9f3a8a, #fb8b4a);
+  border-width: 2px;
+}
+
+.tasks-cont_body div:nth-child(3) {
+  border: 3px hidden greenyellow;
+}
+.tasks-body_child.dragOver {
+  border-style: solid !important;
+}
+
+.tasks-body_child,
+.tasks-bd_title,
+.taskItem_container,
+.taskItem-cont_tools {
+  display: flex;
+}
+
+.tasks-bd_title,
+.taskItem.pointerNone {
+  pointer-events: none;
+}
+
+.tasks-child_status {
+  padding: 0.2rem 1rem;
+  margin: 0 1rem;
+  border-radius: 40%;
+  background-color: var(--colour-1);
+}
+
+.taskItem {
+  font-family: "Poppins", sans-serif;
+  margin: 0.9rem 0 0.3rem 0;
+  cursor: move;
+  background-color: #2f3142;
+  border-radius: 25px;
+  border: 1px dotted #2f3142;
+  max-width: 90%;
+}
+.tasks-child_add {
+  margin-left: auto;
+  width: 1.6rem;
+}
+.taskItem.dragStart {
+  border: 1px dotted white !important;
+}
+.taskItem.dragStart > div {
+  visibility: hidden;
+}
+.taskItem_container {
+  flex-direction: column;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--colour-1);
+}
+
+.taskItem-cont_tools {
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.taskItem-tools_users {
+  position: relative;
+}
+.taskItem-tools_users img {
+  height: 2rem;
+  border-radius: 50%;
+}
+.taskItem-tools_users img:nth-child(1) {
+  position: absolute;
+  left: 1rem;
+}
+.taskItems-tools_priority {
+  margin-left: auto;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+}
+.taskItems-tools_priority.Low {
+  background-color: #00c27c;
+}
+.taskItems-tools_priority.Medium {
+  background-color: #ff9200;
+}
+.taskItems-tools_priority.High {
+  background-color: #eb4d4e;
+}
