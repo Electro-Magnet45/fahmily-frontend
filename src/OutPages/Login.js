@@ -14,7 +14,7 @@ const Login = () => {
     <div className="login">
       <div className="login_container app_container">
         <h1>
-          <span>Login</span> to Your Account
+          <span className="global_span1">Login</span> to Your Account
         </h1>
         <p>Login to your account with your email and password</p>
         <div className="login-cont_form">

@@ -2,7 +2,8 @@
   margin: 0;
   outline: none;
 }
-body::-webkit-scrollbar {
+body::-webkit-scrollbar,
+.app-cont_test::-webkit-scrollbar {
   display: none;
 }
 

@@ -11,7 +11,7 @@
   flex: 1;
   flex-direction: column;
   background-color: #272938;
-  border-image-slice: 1; /*for border*/
+  border-image-slice: 1; /*see class below*/
   height: fit-content;
 }
 .tasks-cont_body div:nth-child(1) {
@@ -57,7 +57,17 @@
 .tasks-child_add {
   margin-left: auto;
   width: 1.6rem;
+  pointer-events: all;
 }
+.tasks-child_add svg {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.tasks-child_add svg:active {
+  background-color: var(--colour-1);
+  transition: all 0.2s ease;
+}
+
 .taskItem.dragStart {
   border: 1px dotted white !important;
 }

@@ -9,6 +9,8 @@ import {
   Lock,
 } from "@styled-icons/bootstrap";
 import { Link } from "react-router-dom";
+import secrets from "../secrets.json";
+import CryptoJS from "crypto-js";
 import custom_anime from "../assets/custom_anime.png";
 
 const RegisterForm1 = ({
@@ -45,7 +47,7 @@ const RegisterForm1 = ({
         <PersonCheck />
       </div>
       <p className={!name || !userName ? "hidden_message" : "visible_message"}>
-        That's All <span>We</span> Need!
+        That's All <span className="global_span1">We</span> Need!
       </p>
       <div
         className="register-form_div clickable"
@@ -59,7 +61,7 @@ const RegisterForm1 = ({
   );
 };
 
-const RegisterForm2 = () => {
+const RegisterForm2 = ({ registerUser, adminId, setAdminId }) => {
   return (
     <div className="register-cont_form" id="register_form2">
       <div className="register-form_div">
@@ -71,10 +73,15 @@ const RegisterForm2 = () => {
         <Lock />
       </div>
       <div className="register-form_div">
-        <input type="password" placeholder="Admin ID" />
+        <input
+          type="password"
+          placeholder="Admin ID"
+          value={adminId}
+          onInput={(e) => setAdminId(e.target.value)}
+        />
       </div>
       <div className="register-form_div">
-        <button>Sign Up</button>
+        <button onClick={registerUser}>Sign Up</button>
         <ArrowRight className="login-form_submitIcon" />
       </div>
     </div>
@@ -84,10 +91,22 @@ const RegisterForm2 = () => {
 const Register = () => {
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
+  const [adminId, setAdminId] = useState("");
 
   const formHideShow = () => {
     document.getElementById("register_form1").classList.add("hide_anime");
     document.getElementById("register_form2").classList.add("show_anime");
+  };
+
+  const registerUser = () => {
+    const originalText = CryptoJS.AES.decrypt(
+      secrets.secret_1,
+      adminId
+    ).toString(CryptoJS.enc.Utf8);
+    if (originalText.length > 4) {
+      localStorage.setItem("registered", true);
+      window.dispatchEvent(new Event("storage")); //trigger storage event on App.js
+    }
   };
 
   return (
@@ -105,7 +124,11 @@ const Register = () => {
             setUserName={setUserName}
             formHideShow={formHideShow}
           />
-          <RegisterForm2 />
+          <RegisterForm2
+            registerUser={registerUser}
+            adminId={adminId}
+            setAdminId={setAdminId}
+          />
           <div className="register-cont_image">
             <img src={register_photo} alt="" />
           </div>

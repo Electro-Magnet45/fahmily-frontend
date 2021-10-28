@@ -1,3 +1,7 @@
+.menu,
+.menu_container .menu-cont_item {
+  display: flex;
+}
 .menu {
   grid-column: 2;
   grid-row: 1;
@@ -8,8 +12,9 @@
   align-items: center;
   justify-content: flex-end;
   width: 95vw;
-  margin-top: 0.6rem;
+  margin: 0.6rem 0 0 auto;
   padding: 0.2rem 0;
+  opacity: 0;
 }
 .menu-cont_item {
   position: relative;
@@ -19,6 +24,7 @@
   padding: 0.5rem;
   cursor: pointer;
   display: flex;
+  opacity: 1;
 }
 .menu-cont_item.profile {
   padding: 0;

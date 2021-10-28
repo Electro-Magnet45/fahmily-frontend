@@ -1,6 +1,6 @@
 {
   "name": "family",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": true,
   "repository": "https://github.com/Electro-Magnet45/fahmily-frontend.git",
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "crypto-js": "^4.1.1",
     "electron-is-dev": "^2.0.0",
     "emoji-picker-react": "^3.4.8",
     "react": "^17.0.2",
@@ -54,7 +55,7 @@
     ]
   },
   "devDependencies": {
-    "electron": "^15.1.2",
+    "electron": "^15.3.0",
     "electron-builder": "^22.13.1",
     "react-scripts": "^4.0.3"
   }
