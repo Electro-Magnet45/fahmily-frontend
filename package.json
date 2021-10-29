@@ -1,9 +1,10 @@
 {
   "name": "family",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "private": true,
   "repository": "https://github.com/Electro-Magnet45/fahmily-frontend.git",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.2",
     "@styled-icons/bootstrap": "^10.34.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -14,7 +15,10 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
+    "react-sortablejs": "^6.0.0",
+    "sortablejs": "^1.14.0",
     "styled-components": "^5.3.1",
     "web-vitals": "^1.1.2"
   },

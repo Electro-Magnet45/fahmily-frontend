@@ -17,10 +17,14 @@
   src: local(""), url("./assets/Poppins-Medium.woff2") format("woff2");
 }
 
+.base {
+  background-color: #151419;
+  color: white;
+  user-select: none;
+}
 .app {
   min-height: 100vh;
   font-family: "Varela Round", sans-serif;
-  user-select: none;
   --back-colour: linear-gradient(90deg, #9f3a8a 1%, #dc314c 50%, #fb8b4a 100%);
   --colour-1: #494d62;
 }
@@ -34,10 +38,7 @@
 .app input::placeholder {
   color: white;
 }
-.base {
-  background-color: #151419;
-  color: white;
-}
+
 .app_container {
   min-height: 100vh;
   animation: page_transition 1.5s forwards;
@@ -46,8 +47,7 @@
   grid-template-columns: 1fr 1fr;
 }
 .app-cont_routes {
-  padding-left: 1rem;
-  margin-bottom: 2rem;
+  margin: 0 0 1rem 1rem;
   grid-column: 2;
   grid-row: 2;
   position: relative;
