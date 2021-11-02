@@ -42,7 +42,8 @@
   padding: 0.2rem 1rem;
   margin: 0 1rem;
   border-radius: 40%;
-  background-color: var(--colour-1);
+  background-color: var(--colour-9);
+  color: black;
 }
 
 .taskItem {
@@ -72,7 +73,7 @@
   flex-direction: column;
   padding: 1rem 1rem 0.5rem 1rem;
   border-radius: 20px;
-  background-color: var(--colour-1);
+  background-color: var(--colour-11);
   font-size: 1.2rem;
 }
 

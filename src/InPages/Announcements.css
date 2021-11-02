@@ -13,7 +13,7 @@
   font-family: "Nunito", sans-serif;
 }
 .ants-latest_sec {
-  background-color: var(--colour-1);
+  background: var(--back-colour);
   margin: 1.5rem auto 2.5rem auto;
   padding: 1.5rem;
   border-radius: 15px;
@@ -22,7 +22,7 @@
 }
 .ants-older_sec {
   margin: 2rem 0 0 9vw;
-  border-left: 1px solid white;
+  border-left: 2px solid white;
   padding-left: 1.5rem;
 }
 
@@ -50,6 +50,6 @@
   flex: 80%;
 }
 .annItem-info_title {
-  color: var(--colour-2);
+  color: var(--colour-5);
   margin-bottom: 1.5rem;
 }

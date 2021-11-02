@@ -26,8 +26,17 @@
   min-height: 100vh;
   font-family: "Varela Round", sans-serif;
   --back-colour: linear-gradient(90deg, #9f3a8a 1%, #dc314c 50%, #fb8b4a 100%);
-  --colour-1: #494d62;
-  --colour-2: #806de9;
+  --colour-1: #7400b8;
+  --colour-2: #6930c3;
+  --colour-3: #5e60ce;
+  --colour-4: #5390d9;
+  --colour-5: #4ea8de;
+  --colour-6: #48bfe3;
+  --colour-7: #56cfe1;
+  --colour-8: #64dfdf;
+  --colour-9: #72efdd;
+  --colour-10: #80ffdb;
+  --colour-11: #494d62;
 }
 .app a {
   color: inherit;

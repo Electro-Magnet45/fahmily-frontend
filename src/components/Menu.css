@@ -1,5 +1,6 @@
 .menu,
-.menu_container .menu-cont_item {
+.menu_container,
+.menu-cont_item {
   display: flex;
 }
 .menu {
@@ -9,7 +10,6 @@
   width: 95vw;
 }
 .menu_container {
-  display: flex;
   align-items: center;
   justify-content: flex-end;
   width: 100%;
@@ -19,11 +19,10 @@
 .menu-cont_item {
   position: relative;
   margin: 0 0.5rem;
-  background-color: var(--colour-1);
+  background-color: var(--colour-3);
   border-radius: 30%;
   padding: 0.5rem;
   cursor: pointer;
-  display: flex;
   opacity: 1;
 }
 .menu-cont_item.profile {
