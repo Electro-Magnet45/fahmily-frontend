@@ -4,7 +4,6 @@ import { Plus } from "@styled-icons/bootstrap";
 import man_2 from "../assets/man_2.png";
 import woman_2 from "../assets/woman_2.png";
 import { ReactSortable } from "react-sortablejs";
-import { useKeyPress } from "../keyShortcut";
 
 const TaskItem = ({ task }) => {
   return (
@@ -25,15 +24,16 @@ const TaskItem = ({ task }) => {
   );
 };
 
-const DraggableElement = ({ list, setList, cloneMode }) => {
+const DraggableElement = ({ list, setList, updateFunc }) => {
   return (
     <ReactSortable
-      group={cloneMode ? { name: "tasks_group", pull: "clone" } : "tasks_group"}
+      group="tasks_group"
       list={list}
       setList={setList}
       animation={200}
       delay={1}
       className="task-child_drag"
+      onEnd={updateFunc}
     >
       {list.map((e) => {
         return <TaskItem key={e._id} task={e} />;
@@ -43,60 +43,66 @@ const DraggableElement = ({ list, setList, cloneMode }) => {
 };
 
 const Tasks = () => {
-  const [cloneMode, setCloneMode] = useState(false);
   const [todo, setTodo] = useState([
     {
-      _id: 12434234234,
       name: "This is a Todo",
-      priority: "Low",
-    },
-    {
-      _id: 23435346345,
-      name: "This is a second Todo",
-      priority: "Medium",
+      priority: "low",
+      _id: 1234,
+      selected: false,
+      chosen: false,
     },
   ]);
   const [inProgress, setInProgress] = useState([
     {
-      _id: 35435345345,
+      _id: 3456,
       name: "This is a In Progress",
-      priority: "Low",
+      priority: "low",
+      selected: false,
     },
     {
-      _id: 4345345345,
+      name: "This is a second Todo",
+      priority: "medium",
+      _id: 2345,
+      selected: false,
+      chosen: false,
+    },
+    {
       name: "This is a asdasd In Progress",
-      priority: "High",
+      priority: "high",
+      _id: 4567,
+      selected: false,
+      chosen: false,
     },
   ]);
   const [done, setDone] = useState([
     {
-      _id: 5453453454,
+      _id: 5678,
       name: "This is a Done",
-      priority: "High",
+      priority: "high",
     },
     {
-      _id: 643534534,
+      _id: 6789,
       name: "This is a fdgdf gfdgdf rtretert  Done",
-      priority: "Low",
+      priority: "low",
     },
     {
-      _id: 7435345345,
+      _id: 7890,
       name: "This is a Third Done",
-      priority: "Medium",
+      priority: "medium",
     },
     {
-      _id: 85345345345,
+      _id: 8901,
       name: "This is a Fourth Done",
-      priority: "Low",
+      priority: "low",
     },
   ]);
-  useKeyPress(() => setCloneMode((prev) => !prev), 76);
+
+  const updateFunc = () => {};
 
   return (
     <div className="tasks">
       <div className="tasks_container">
         <h1>Tasks</h1>
-        <div className="tasks-cont_menu"></div>
         <div className="tasks-cont_body">
           <div className="tasks-body_child">
             <div className="tasks-bd_title">
@@ -109,7 +115,7 @@ const Tasks = () => {
             <DraggableElement
               list={todo}
               setList={setTodo}
-              cloneMode={cloneMode}
+              updateFunc={updateFunc}
             />
           </div>
           <div className="tasks-body_child ">
@@ -123,7 +129,7 @@ const Tasks = () => {
             <DraggableElement
               list={inProgress}
               setList={setInProgress}
-              cloneMode={cloneMode}
+              updateFunc={updateFunc}
             />
           </div>
           <div className="tasks-body_child">
@@ -137,7 +143,7 @@ const Tasks = () => {
             <DraggableElement
               list={done}
               setList={setDone}
-              cloneMode={cloneMode}
+              updateFunc={updateFunc}
             />
           </div>
         </div>

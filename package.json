@@ -1,6 +1,6 @@
 {
   "name": "family",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "private": true,
   "repository": "https://github.com/Electro-Magnet45/fahmily-frontend.git",
   "dependencies": {
@@ -15,6 +15,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-hotkeys-hook": "^3.4.4",
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "react-sortablejs": "^6.0.0",

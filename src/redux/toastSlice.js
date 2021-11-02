@@ -8,7 +8,7 @@ export const toastSlice = createSlice({
   reducers: {
     toastDataIncrement: (state, action) => {
       const newToast = action.payload;
-      newToast._id = state.toastData.length + 2;
+      newToast._id = new Date().toISOString();
       state.toastData.push(newToast);
     },
     toastDataReduction: (state) => {
@@ -18,5 +18,4 @@ export const toastSlice = createSlice({
 });
 
 export const { toastDataIncrement, toastDataReduction } = toastSlice.actions;
-
 export default toastSlice.reducer;

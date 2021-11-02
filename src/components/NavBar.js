@@ -40,13 +40,15 @@ const NavBar = () => {
               {pathName === "/home" ? <GridFill /> : <GridOutline />}
             </div>
           </Link>
-          <div className="navBar-cont_link">
-            {pathName === "/activity/announcements" ? (
-              <MegaphoneFill />
-            ) : (
-              <MegaphoneOutline />
-            )}
-          </div>
+          <Link to="/activity/announcements">
+            <div className="navBar-cont_link">
+              {pathName === "/activity/announcements" ? (
+                <MegaphoneFill />
+              ) : (
+                <MegaphoneOutline />
+              )}
+            </div>
+          </Link>
           <div className="navBar-cont_link">
             {pathName === "/activity/new-suggestion" ? (
               <LightbulbFill />
