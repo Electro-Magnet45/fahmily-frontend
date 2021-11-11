@@ -1,0 +1,55 @@
+.ants_container,
+.ants-latest_sec,
+.annItem_container {
+  display: flex;
+}
+
+.ants_container {
+  flex-direction: column;
+  font-family: "Sora", sans-serif;
+  margin: 1.5rem 0 1rem 1.5rem;
+}
+.ants_container div div {
+  font-family: "Nunito", sans-serif;
+}
+.ants-latest_sec {
+  background: var(--back-colour);
+  margin: 1.5rem auto 2.5rem auto;
+  padding: 1.5rem;
+  border-radius: 15px;
+  max-width: 60%;
+  box-shadow: -3px 0px 11px -2px rgba(0, 0, 0, 0.75);
+}
+.ants-older_sec {
+  margin: 2rem 0 0 9vw;
+  border-left: 2px solid white;
+  padding-left: 1.5rem;
+  border-radius: 2px;
+}
+
+.announcementItem {
+  position: relative;
+}
+.annItem_container {
+  padding: 2rem 1rem 1rem 1rem;
+  padding-right: 5%;
+}
+.annItem_container::before {
+  background: white;
+  content: "";
+  height: 2px;
+  position: absolute;
+  top: 28%;
+  left: -1.5rem;
+  width: 2rem;
+}
+
+.annItem-cont_date {
+  flex: 20%;
+}
+.annItem-cont_info {
+  flex: 80%;
+}
+.annItem-info_title {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,108 @@
+.tasks-cont_body {
+  display: flex;
+  justify-content: center;
+  padding: 0 5%;
+  font-family: "Sora", sans-serif;
+}
+.tasks-body_child {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  flex: 1;
+  flex-direction: column;
+  background-color: #272938;
+  border-image-slice: 1; /*see class below*/
+  height: fit-content;
+}
+.tasks-body_child:nth-child(3) .taskItem-cont_title {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-child_drag {
+  min-height: 10rem;
+}
+.tasks-cont_body div:nth-child(1) {
+  border-image-source: linear-gradient(to left, #9f3a8a, #fb8b4a);
+  border-width: 2px;
+}
+
+.tasks-cont_body div:nth-child(3) {
+  border: 3px hidden greenyellow;
+}
+
+.tasks-body_child,
+.tasks-bd_title,
+.taskItem_container,
+.taskItem-cont_tools {
+  display: flex;
+}
+
+.tasks-child_status {
+  padding: 0.2rem 1rem;
+  margin: 0 1rem;
+  border-radius: 40%;
+  background-color: var(--colour-1);
+  color: white;
+}
+
+.taskItem {
+  font-family: "Nunito", sans-serif;
+  margin: 0.9rem 0 0.3rem 0;
+  cursor: move;
+  background-color: #2f3142;
+  border-radius: 25px;
+  border: 1px dotted #2f3142;
+  max-width: 90%;
+}
+.tasks-child_add {
+  margin-left: auto;
+  width: 1.6rem;
+  pointer-events: all;
+}
+.tasks-child_add svg {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.tasks-child_add svg:active {
+  background-color: var(--colour-1);
+  transition: all 0.2s ease;
+}
+
+.taskItem_container {
+  flex-direction: column;
+  padding: 1rem 1rem 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--colour-1);
+  font-size: 1.2rem;
+}
+
+.taskItem-cont_tools {
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.taskItem-tools_users {
+  position: relative;
+}
+.taskItem-tools_users img {
+  height: 2rem;
+  border-radius: 50%;
+}
+.taskItem-tools_users img:nth-child(1) {
+  position: absolute;
+  left: 1rem;
+}
+.taskItems-tools_priority {
+  margin-left: auto;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+}
+.taskItems-tools_priority.low {
+  background-color: #00c27c;
+}
+.taskItems-tools_priority.medium {
+  background-color: #ff9200;
+}
+.taskItems-tools_priority.high {
+  background-color: #eb4d4e;
+}

@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  outline: none;
+}
+
+.app-cont_test::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.app-cont_test::-webkit-scrollbar-track {
+  background: #888;
+}
+.app-cont_test::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+body {
+  overflow: hidden;
+}

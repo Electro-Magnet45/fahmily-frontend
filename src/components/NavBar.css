@@ -1,0 +1,46 @@
+.navBar {
+  grid-column: 1;
+  grid-row: 1/4;
+}
+.navBar_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - 3rem);
+  padding: 0 0.6rem;
+  z-index: 50;
+}
+.navBar_container svg {
+  height: 1.4rem;
+}
+
+.navBar-cont_icon img {
+  height: 2rem;
+}
+.navBar-cont_links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.navBar-cont_link {
+  border-radius: 10px;
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 0.8rem;
+  transition: all 0.2s ease;
+}
+.navBar-cont_link:hover {
+  background-color: white;
+  color: black;
+}
+.navBar-cont_search {
+  margin-bottom: 2rem;
+}
+.navBar-cont_search:hover {
+  background: linear-gradient(90deg, #9f3a8a 1%, #dc314c 50%, #fb8b4a 100%);
+  color: white;
+}
+
+.navBar-cont_profile {
+  margin-top: auto;
+}
